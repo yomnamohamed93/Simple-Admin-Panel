@@ -32,6 +32,10 @@
           <actionMethod actionName="delete"/>
           <actionMethod actionName="add"/>
         </controllerFile>
+        <controllerFile controllerName="Settings">
+          <actionMethod actionName="index"/>
+          <actionMethod actionName="edit"/>
+        </controllerFile>
       </controllersDirectory>
       <formsDirectory>
         <formFile formName="AddUser"/>
@@ -45,6 +49,7 @@
         <modelFile modelName="User"/>
         <modelFile modelName="Page"/>
         <modelFile modelName="News"/>
+        <modelFile modelName="Settings"/>
       </modelsDirectory>
       <modulesDirectory enabled="false"/>
       <servicesDirectory enabled="false"/>
@@ -100,6 +105,12 @@
           </viewControllerScriptsDirectory>
           <viewControllerScriptsDirectory forControllerName="News">
             <viewScriptFile forActionName="add"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Settings">
+            <viewScriptFile forActionName="index"/>
+          </viewControllerScriptsDirectory>
+          <viewControllerScriptsDirectory forControllerName="Settings">
+            <viewScriptFile forActionName="edit"/>
           </viewControllerScriptsDirectory>
         </viewScriptsDirectory>
         <viewHelpersDirectory/>

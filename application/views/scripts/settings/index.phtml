@@ -1,0 +1,16 @@
+
+<div id="view-content">
+	<h3>Settings</h3>
+<ul>
+	<?php foreach ($this->settings as $set) { ?>
+	<tr>
+	<li><h4>Admin Email:</h4> <?= $set['admin_email']?></li>
+	<li><h4>Site Name:</h4> <?= $set['site_name']?></li>
+	<li><h4>Phone:</h4> <?= $set['phone']?></li>
+	<li><h4>facebook:</h4> <?= $set['facebook_link']?></li>
+	<li><h4>twitter:</h4> <?= $set['twitter_link']?></li>
+	<a href="./edit">update</a>
+	<?php } ?>
+</ul>
+
+</div>
