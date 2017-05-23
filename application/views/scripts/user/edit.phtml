@@ -1,4 +1,46 @@
-<br /><br />
+
+	<h3>Edit User</h3>
+<br />
 <div id="view-content">
-	<p>View script for controller <b>User</b> and script/action name <b>edit</b></p>
+
+	<form  method="post" >
+		<div class="form-group">
+		  <label for="">Name: </label>
+		  <input type="text" class="form-control" name="username" value="<?php if (isset($this->user)) echo $this->user['username'];?>">
+		</div>
+<br />
+		<div class="form-group">
+		  <label for="">Password: </label>
+		  <input type="password" class="form-control" name="password"
+			value="<?php if (isset($this->user)) echo $this->user['password'];?>">
+		</div>
+<br />
+	  <div class="form-group">
+	    <label for="access_pages">can access pages: </label>
+	    <input type="checkbox" class="form-control" name="access_pages" value=
+			"<?php if ($this->user['access_pages']==1)
+			 echo 1;?>" >
+	  </div>
+		<div class="form-group">
+			<label for="access_news">can access news: </label>
+			<input type="checkbox" class="form-control" name="access_news"
+			value= "<?php if ($this->user['access_news']==1)
+			 echo 1;?>" >
+		</div>
+		<div class="form-group">
+			<label for="access_users">can access users? </label>
+			<input type="checkbox" class="form-control" name="access_users"
+			value = "<?php if ($this->user['access_users']==1)
+			 echo 1;?>" >
+		</div>
+		<div class="form-group">
+			<label for="access_settings"> can access settings? </label>
+			<input type="checkbox" class="form-control" name="access_settings"
+			value = "<?php if ($this->user['access_settings']==1)
+			 echo 1;?>" >
+		</div>
+		<input type="hidden" name="user_id" value="<?=$this->user['user_id']?>">
+		<input type="submit" name="" value="Update">
+
+	</form>
 </div>

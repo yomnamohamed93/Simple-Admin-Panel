@@ -19,12 +19,25 @@ function addUser($data)
   if(!isset($data['access_users'])){
     $data['access_users']='0';
   }
-  var_dump($data);
+  // var_dump($data);
    return $this->insert($data);
 }
 
-function editUser($id, $data){
-  $this->update($data, "id=$id");
+function editUser($data,$id ){
+  // var_dump($data);
+  if($data['access_pages']==''){
+    $data['access_pages']='0';
+  }
+  if($data['access_news']==''){
+    $data['access_news']='0';
+  }
+  if($data['access_settings']==''){
+    $data['access_settings']='0';
+  }
+  if($data['access_users']==''){
+    $data['access_users']='0';
+  }
+  return $this->update($data, "user_id=$id");
 }
 
 function getUserById($id){
@@ -35,7 +48,7 @@ function listUsers(){
 }
 
 function deleteUser($id){
-  $this->delete("id=$id");
+  return $this->delete("user_id=$id");
 }
 
 }

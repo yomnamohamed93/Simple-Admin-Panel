@@ -1,4 +1,7 @@
+<?php if (isset($this->error)) ?>
+<?= $this->error; ?>
 
-<?php
+	<h3>New User</h3>
+	<?php
 $this->form->setAction($this->url());
 echo $this->form;
