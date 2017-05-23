@@ -48,12 +48,12 @@ class UserController extends Zend_Controller_Action
 
     public function listAction()
     {
-        // action body
+        $this->view->users = $this->user_model->listUsers();
     }
 
     public function deleteAction()
     {
-        // action body
+        $this->user_model->deleteUser($id);
     }
 
 

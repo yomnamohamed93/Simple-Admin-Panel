@@ -1,5 +1,20 @@
 <br /><br />
 <div id="view-content">
 	<h3>List All Users</h3>
-		<?php var_dump($this->users) ?>
+	<table>
+		<tr>
+		<th>Id: </th>
+		<th>User Name: </th>
+		<th colspan="2">actions</th>
+		</tr>
+		<?php foreach ($this->users as $user) { ?>
+		<tr>
+		<td><?= $user['user_id']?></td>
+		<td><?= $user['username']?></td>
+		<td><a href="user/">update</a></td>
+		<td><a href="user/delete">delete</a></td>
+		</tr>
+		<?php } ?>
+	</table>
+
 </div>
