@@ -10,7 +10,7 @@ class UserController extends Zend_Controller_Action
 
     public function indexAction()
     {
-        // action body
+
         $this->view->users = $this->user_model->listUsers();
     }
 
@@ -31,7 +31,7 @@ class UserController extends Zend_Controller_Action
 
                 if ($this->user_model->addUser($params)) {
                   $this->view->params = $params;
-                    $this->redirect('user/list');
+                    $this->redirect('user/index');
                 }
                 else {
                   $this->view->error = "something wrong";
@@ -62,7 +62,7 @@ class UserController extends Zend_Controller_Action
                 //  $this->view->params = $params;
                  if ($this->user_model->editUser($params,$params['user_id'])) {
                    $this->view->params = $params;
-                     $this->redirect('user/list');
+                     $this->redirect('user/index');
                  }
                  else {
                    $this->view->error = "something wrong";
@@ -71,19 +71,28 @@ class UserController extends Zend_Controller_Action
         $this->view->user = $user;
         $this->render('edit');
     }
-
-    public function listAction()
-    {
-        $this->view->users = $this->user_model->listUsers();
-    }
-
+    
     public function deleteAction()
     {
         $id = $this->_request->getParam('user_id');
         // echo($id);
         if(  $this->user_model->deleteUser($id))
-         $this->redirect('user/list');
+         $this->redirect('user/index');
     }
+
+    public function loginAction()
+    {
+      $username= $this->_request->getParam(‘username’);
+      $password= $this->_request->getParam(‘password’);
+      // get the default db adapter
+      $db =
+      Zend_Db_Table::getDefaultAdapter();
+      //create the auth adapter
+      $authAdapter = new Zend_Auth_Adapter_DbTable($db,'user','username', 'password');
+      //set the email and password
+      $authAdapter->setIdentity($username);
+      $authAdapter->setCredential(md5($password));
+          }
 
 
 }

@@ -17,5 +17,10 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
     // Set the initial JS to load:
     $view->headScript()->prependFile('/js/site.js');
   }
-
+  //To activate session
+  protected function _initSession(){
+  Zend_Session::start();
+  $session = new Zend_Session_Namespace( 'Zend_Auth' );
+  $session->setExpirationSeconds( 1800 );
+  }
 }

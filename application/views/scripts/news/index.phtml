@@ -1,0 +1,23 @@
+
+<div id="view-content">
+	<h3>List All News</h3>
+	<table>
+		<tr>
+		<th>Title</th>
+		<th>Content</th>
+		<th>Date</th>
+		<th colspan="2">actions</th>
+		</tr>
+		<?php foreach ($this->news as $value) { ?>
+		<tr>
+		<td><?= $value['title']?></td>
+		<td><?= $value['content']?></td>
+		<td><?= $value['date']?></td>
+		<td><a href="./edit/n_id/<?=$value['n_id']?>">update</a></td>
+		<td><a href="./delete/n_id/<?=$value['n_id']?>">delete</a></td>
+		</tr>
+		<?php } ?>
+	</table>
+	<br>
+<a href="./add">Add News</a>
+</div>

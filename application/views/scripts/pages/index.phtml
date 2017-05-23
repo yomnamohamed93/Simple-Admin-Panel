@@ -1,0 +1,21 @@
+
+<div id="view-content">
+	<h3>List All Pages</h3>
+	<table>
+		<tr>
+		<th>Title</th>
+		<th>Content</th>
+		<th colspan="2">actions</th>
+		</tr>
+		<?php foreach ($this->pages as $page) { ?>
+		<tr>
+		<td><?= $page['title']?></td>
+		<td><?= $page['content']?></td>
+		<td><a href="./edit/p_id/<?=$page['p_id']?>">update</a></td>
+		<td><a href="./delete/p_id/<?=$page['p_id']?>">delete</a></td>
+		</tr>
+		<?php } ?>
+	</table>
+	<br>
+<a href="./add">new page</a>
+</div>

@@ -1,0 +1,18 @@
+<div id="view-content">
+	<h3><?php if(isset($this->page)) echo "Update News"; else echo"Add News"?></h3>
+	<form method="post">
+		<div class="form-group">
+		  <label for="title">Title: </label>
+		  <input type="text" class="form-control" name="title" value="<?php if(isset($this->news)) echo $this->news['title'];?>">
+		</div>
+<br>
+		<div class="form-group">
+		  <label for="content">Content: </label>
+			<textarea name="content" rows="8" cols="80" value="<?php if(isset($this->news)) echo $this->news['content'];?>"></textarea>
+		</div>
+<br>
+		<input type="submit" value="<?php if(isset($this->news)) echo "update news"; else echo"create news"?>">
+
+	</form>
+</div>
+	<h3><?php if(isset($this->error)) echo $this->error ;?></h3>
