@@ -13,12 +13,12 @@
 		<br>
 		<div class="form-group">
 		  <label for="content">Content: </label>
-			<textarea name="content" rows="8" cols="80" value="<?php if(isset($this->news)) echo $this->news['content'];?>"></textarea>
+			<textarea name="content" rows="8" cols="80" ><?php if(isset($this->news)) echo $this->news['content'];?></textarea>
 		</div>
 		<br>
 		<input type="submit" value="<?php if(isset($this->news)) echo "update news"; else echo"create news"?>">
 
-	</form>	
+	</form>
 			</div>
 	</div>
 </div>

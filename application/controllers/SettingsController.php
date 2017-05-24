@@ -6,8 +6,10 @@ class SettingsController extends Zend_Controller_Action
     public function init()
     {
         $this->settings_model = new Application_Model_Settings();
-        $user=$_SESSION['user'];
-        $this->view->permession=$user['access_settings'];
+        if (isset($_SESSION['user'])) {
+          $user = $_SESSION['user'];
+          $this->view->permession = $user['access_settings'];
+        }
 
     }
 

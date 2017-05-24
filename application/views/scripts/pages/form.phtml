@@ -13,7 +13,7 @@
 		<br>
 		<div class="form-group">
 		  <label for="content">Content: </label>
-		 <textarea name="content" rows="8" cols="80" value="<?php if(isset($this->page)) echo $this->page['content'];?>"></textarea>
+		 <textarea name="content" rows="8" cols="80" ><?php if(isset($this->page)) echo $this->page['content'];?></textarea>
 		</div>
 		<br>
 		<input type="submit" value="<?php if(isset($this->page)) echo "update page"; else echo"create page"?>">
