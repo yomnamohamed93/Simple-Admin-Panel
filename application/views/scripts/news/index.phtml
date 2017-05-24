@@ -3,28 +3,40 @@
 
 <?php } else { ?>
 <div id="view-content">
-	<h3>List All News</h3>
-	<table>
-		<tr>
-		<th>Title</th>
-		<th>Content</th>
-		<th>Date</th>
-		<th colspan="2">actions</th>
-		</tr>
-		<?php foreach ($this->news as $value) { ?>
-		<tr>
-		<td><?= $value['title']?></td>
-		<td><?= $value['content']?></td>
-		<td><?= $value['date']?></td>
-		<td><a href="./edit/n_id/<?=$value['n_id']?>">update</a></td>
-		<td><a href="./delete/n_id/<?=$value['n_id']?>">delete</a></td>
-		</tr>
-		<?php } ?>
-	</table>
-	<br>
+
+<div class="container-fluid">
+	<div class="text-center">
+		<h3>List All News</h3>	
+	</div>
+	<div class="row">
+		<div class="col-sm-8 push-sm-2">
+			<table class="table">
+			<thead>
+				<tr>
+					<th>Title</th>
+					<th>Content</th>
+					<th>Date</th>
+					<th colspan="2">actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php foreach ($this->news as $value) { ?>
+				<tr>
+				<td><?= $value['title']?></td>
+				<td><?= $value['content']?></td>
+				<td><?= $value['date']?></td>
+				<td><a href="/news/edit/n_id/<?=$value['n_id']?>">update</a></td>
+				<td><a href="/news/delete/n_id/<?=$value['n_id']?>">delete</a></td>
+				</tr>
+				<?php } ?>
+			</tbody>
+			</table>			
+		</div>
+	</div>
+</div>
+	<div class="text-center">
+		<a class="btn btn-primary btn-outline-primary" href="/news/add">add news</a>
+	</div>
 	<?= $this->paginationControl($this->news, 'Sliding', 'pagination.phtml'); ?>
-	<br>
-<a href="./add">Add News</a>
-<h3><a href="<?=$this->url(array('controller'=>'user','action'=>'logout'))?>">log out</a> ¦ <a href="/">Home</a></h3>
 </div>
 <?php } ?>

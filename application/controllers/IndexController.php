@@ -34,6 +34,7 @@ class IndexController extends Zend_Controller_Action
 
   public function loginAction()
   {
+    var_dump($this->_request->getParams());
     if ($this->getRequest()->isPost() &&
     $this->_request->getParam('username') &&
     $this->_request->getParam('password')

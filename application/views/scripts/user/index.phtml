@@ -3,26 +3,37 @@
 
 <?php } else { ?>
 <div id="view-content">
-	<h3>List All Users</h3>
-	<table>
-		<tr>
-		<th>id</th>
-		<th>User Name</th>
-		<th colspan="2">actions</th>
-		</tr>
-		<?php foreach ($this->users as $user) { ?>
-		<tr>
-		<td><?= $user['user_id']?></td>
-		<td><?= $user['username']?></td>
-		<td><a href="./edit/user_id/<?=$user['user_id']?>">update</a></td>
-		<td><a href="./delete/user_id/<?=$user['user_id']?>">delete</a></td>
-		</tr>
-		<?php } ?>
-
-	</table>
-	<br>
-<a href="./add">new user</a>
-	 <?= $this->paginationControl($this->users, 'Sliding', 'pagination.phtml'); ?>
+<div class="container-fluid">
+<div class="text-center">
+	<h2>List All Users</h2>
+</div>
+	<div class="row">
+		<div class="col-sm-8 push-sm-2">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>id</th>
+							<th>User Name</th>
+							<th colspan="2">actions</th>
+						</tr>	
+					</thead>
+					<tbody>
+						<?php foreach ($this->users as $user) { ?>
+							<tr>
+								<td><?= $user['user_id']?></td>
+								<td><?= $user['username']?></td>
+								<td><a href="/user/edit/user_id/<?=$user['user_id']?>">update</a></td>
+								<td><a href="/user/delete/user_id/<?=$user['user_id']?>">delete</a></td>
+							</tr>
+						<?php } ?>
+					</tbody>
+				</table>		
+		</div>
+	</div>
+</div>
+	<div class="text-center">
+		<a class="btn btn-primary btn-outline-primary" href="/user/add">new user</a>
+	</div>
+	<?= $this->paginationControl($this->users, 'Sliding', 'pagination.phtml'); ?>
 </div>
 <?php } ?>
-<h3><a href="<?=$this->url(array('controller'=>'user','action'=>'logout'))?>">log out</a> ¦ <a href="/">Home</a></h3>

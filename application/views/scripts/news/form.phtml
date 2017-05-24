@@ -1,18 +1,26 @@
 <div id="view-content">
-	<h3><?php if(isset($this->page)) echo "Update News"; else echo"Add News"?></h3>
-	<form method="post">
+<div class="container-fluid">
+	<div class="text-center">
+		<h3><?php if(isset($this->page)) echo "Update News"; else echo"Add News"?></h3>
+	</div>
+	<div class="row">
+			<div class="col-sm-6 push-sm-3">
+					<form method="post">
 		<div class="form-group">
 		  <label for="title">Title: </label>
 		  <input type="text" class="form-control" name="title" value="<?php if(isset($this->news)) echo $this->news['title'];?>">
 		</div>
-<br>
+		<br>
 		<div class="form-group">
 		  <label for="content">Content: </label>
 			<textarea name="content" rows="8" cols="80" value="<?php if(isset($this->news)) echo $this->news['content'];?>"></textarea>
 		</div>
-<br>
+		<br>
 		<input type="submit" value="<?php if(isset($this->news)) echo "update news"; else echo"create news"?>">
 
-	</form>
+	</form>	
+			</div>
+	</div>
+</div>
 </div>
 	<h3><?php if(isset($this->error)) echo $this->error ;?></h3>

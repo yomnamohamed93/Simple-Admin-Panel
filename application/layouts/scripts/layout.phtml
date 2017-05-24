@@ -1,1 +1,21 @@
-<?php echo $this->layout()->content; ?>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <?php
+            echo $this->headLink()->setStylesheet($this->baseUrl('css/bootstrap.min.css'));
+            echo $this->headScript()->prependFile($this->baseUrl('js/jquery-3.2.1.js'));
+            echo $this->headScript()->prependFile($this->baseUrl('js/bootstrap.min.js'));
+        ?>
+    </head>
+    <body>
+        <?php
+            if (isset($_SESSION['user'])) {
+                include_once './Navbar.phtml';
+            }
+            echo $this->layout()->content;
+        ?>
+    </body>
+</html>
