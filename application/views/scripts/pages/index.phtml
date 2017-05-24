@@ -20,7 +20,9 @@
 		<?php } ?>
 	</table>
 	<br>
+		 <?= $this->paginationControl($this->pages, 'Sliding', 'pagination.phtml'); ?>
+		 <br>
 <a href="./add">new page</a>
-<h3><a href="<?=$this->url(array('controller'=>'user','action'=>'logout'))?>">log out</a></h3>  
+<h3><a href="<?=$this->url(array('controller'=>'user','action'=>'logout'))?>">log out</a> ¦ <a href="/">Home</a></h3>
 </div>
 <?php } ?>

@@ -13,7 +13,13 @@ class NewsController extends Zend_Controller_Action
 
     public function indexAction()
     {
-        $this->view->news = $this->news_model->listNews();
+        $result = $this->news_model->listNews();
+        $page=$this->_getParam('page',1);
+        $paginator = Zend_Paginator::factory($result);
+        $paginator->setItemCountPerPage(10);
+        $paginator->setCurrentPageNumber($page);
+
+        $this->view->news=$paginator;
     }
 
     public function addAction()

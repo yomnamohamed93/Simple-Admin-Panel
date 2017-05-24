@@ -15,8 +15,14 @@ class UserController extends Zend_Controller_Action
 
     public function indexAction()
     {
+      $result = $this->user_model->listUsers();
+      $page=$this->_getParam('page',1);
+      $paginator = Zend_Paginator::factory($result);
+      $paginator->setItemCountPerPage(10);
+      $paginator->setCurrentPageNumber($page);
 
-        $this->view->users = $this->user_model->listUsers();
+      $this->view->users=$paginator;
+        // $this->view->users = $result;
     }
 
     public function addAction()

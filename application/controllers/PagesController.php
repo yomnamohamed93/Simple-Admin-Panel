@@ -13,7 +13,13 @@ class PagesController extends Zend_Controller_Action
 
     public function indexAction()
     {
-        $this->view->pages = $this->page_model->listPages();
+        $result = $this->page_model->listPages();
+        $page=$this->_getParam('page',1);
+        $paginator = Zend_Paginator::factory($result);
+        $paginator->setItemCountPerPage(10);
+        $paginator->setCurrentPageNumber($page);
+
+        $this->view->pages=$paginator;
     }
 
     public function addAction()

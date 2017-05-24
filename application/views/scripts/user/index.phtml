@@ -18,9 +18,11 @@
 		<td><a href="./delete/user_id/<?=$user['user_id']?>">delete</a></td>
 		</tr>
 		<?php } ?>
+
 	</table>
 	<br>
 <a href="./add">new user</a>
+	 <?= $this->paginationControl($this->users, 'Sliding', 'pagination.phtml'); ?>
 </div>
 <?php } ?>
-<h3><a href="<?=$this->url(array('controller'=>'user','action'=>'logout'))?>">log out</a></h3>  
+<h3><a href="<?=$this->url(array('controller'=>'user','action'=>'logout'))?>">log out</a> ¦ <a href="/">Home</a></h3>
