@@ -25,22 +25,13 @@ function addUser($data)
 
 function editUser($data,$id ){
   // var_dump($data);
-  if($data['access_pages']==''){
-    $data['access_pages']='0';
-  }
-  if($data['access_news']==''){
-    $data['access_news']='0';
-  }
-  if($data['access_settings']==''){
-    $data['access_settings']='0';
-  }
-  if($data['access_users']==''){
-    $data['access_users']='0';
-  }
-  return $this->update($data, "user_id=$id");
-}
 
-function getUserById($id){
+  $data['access_pages']=='' ? $data['access_pages']='0' : $data['access_pages']='1';
+  $data['access_news']=='' ? $data['access_news']='0' : $data['access_news']='1';
+  $data['access_settings']=='' ? $data['access_settings']='0' : $data['access_settings']='1';
+  $data['access_users']=='' ? $data['access_users']='0' : $data['access_users']='1';
+
+  return $this->update($data, "user_id=$id");
 }
 
 function listUsers(){

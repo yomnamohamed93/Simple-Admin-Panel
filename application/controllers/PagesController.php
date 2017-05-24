@@ -6,6 +6,9 @@ class PagesController extends Zend_Controller_Action
     public function init()
     {
         $this->page_model = new Application_Model_Page();
+        $user=$_SESSION['user'];
+        $this->view->permession=$user['access_pages'];
+
     }
 
     public function indexAction()

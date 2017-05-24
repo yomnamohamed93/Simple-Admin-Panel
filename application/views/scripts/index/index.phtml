@@ -29,7 +29,7 @@
     }
 </style>
 <div id="welcome">
-    <h1>Welcome to our <span id="zf-name">Company Webite</span></h1>
+    <h1>Welcome to our <span id="zf-name">Company Website</span></h1>
 
     <h3>This is your project's main page</h3>
 
@@ -41,5 +41,6 @@
               <a href="news/index">news</a>
               | <a href="settings/index">settings</a></h3>
         </p>
+      <h3><a href="<?=$this->url(array('controller'=>'user','action'=>'logout'))?>">log out</a></h3>  
     </div>
 </div>

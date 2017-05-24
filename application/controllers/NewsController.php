@@ -5,7 +5,10 @@ class NewsController extends Zend_Controller_Action
 
     public function init()
     {
+
         $this->news_model = new Application_Model_News();
+        $user=$_SESSION['user'];
+        $this->view->permession=$user['access_news'];
     }
 
     public function indexAction()

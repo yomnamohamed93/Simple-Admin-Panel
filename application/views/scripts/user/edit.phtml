@@ -11,33 +11,33 @@
 <br />
 		<div class="form-group">
 		  <label for="">Password: </label>
-		  <input type="password" class="form-control" name="password"
-			value="<?php if (isset($this->user)) echo $this->user['password'];?>">
+		  <input type="password" class="form-control" name="password">
 		</div>
+		
 <br />
 	  <div class="form-group">
 	    <label for="access_pages">can access pages: </label>
-	    <input type="checkbox" class="form-control" name="access_pages" value=
-			"<?php if ($this->user['access_pages']==1)
-			 echo 1;?>" >
+	    <input type="checkbox" class="form-control" name="access_pages"
+			<?php if ($this->user['access_pages']==1)
+			{ ?> checked value="1" <?php } ?> >
 	  </div>
 		<div class="form-group">
 			<label for="access_news">can access news: </label>
 			<input type="checkbox" class="form-control" name="access_news"
-			value= "<?php if ($this->user['access_news']==1)
-			 echo 1;?>" >
+			<?php if ($this->user['access_news']==1)
+			 { ?> checked value="1" <?php } ?> >
 		</div>
 		<div class="form-group">
 			<label for="access_users">can access users? </label>
 			<input type="checkbox" class="form-control" name="access_users"
-			value = "<?php if ($this->user['access_users']==1)
-			 echo 1;?>" >
+			<?php if ($this->user['access_users']==1)
+			 { ?> checked value="1" <?php } ?> >
 		</div>
 		<div class="form-group">
 			<label for="access_settings"> can access settings? </label>
 			<input type="checkbox" class="form-control" name="access_settings"
-			value = "<?php if ($this->user['access_settings']==1)
-			 echo 1;?>" >
+			<?php if ($this->user['access_settings']==1)
+			 { ?> checked value="1" <?php } ?> >
 		</div>
 		<input type="hidden" name="user_id" value="<?=$this->user['user_id']?>">
 		<input type="submit" name="" value="Update">

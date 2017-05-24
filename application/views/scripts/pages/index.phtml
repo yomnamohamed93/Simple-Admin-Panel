@@ -1,4 +1,7 @@
+<?php if($this->permession==0) { ?>
+	<h1>you don't have permession to access this page</h1>
 
+<?php } else { ?>
 <div id="view-content">
 	<h3>List All Pages</h3>
 	<table>
@@ -18,4 +21,6 @@
 	</table>
 	<br>
 <a href="./add">new page</a>
+<h3><a href="<?=$this->url(array('controller'=>'user','action'=>'logout'))?>">log out</a></h3>  
 </div>
+<?php } ?>
