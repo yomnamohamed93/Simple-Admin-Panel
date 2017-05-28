@@ -12,19 +12,10 @@ class IndexController extends Zend_Controller_Action
 
   public function indexAction()
   {
-    // if ($this->getRequest()->isPost()) {
-    //       $params = $this->getRequest()->getParams();
-    //       $username = $params['username'];
-    //       $user = $this->user_model->fetchRow($this->user_model->select()->where("username=?", $username));
-    //
-    //       $this->render('index');
-    // }
-    // $this->view->page = $page;
 
     if (isset($_SESSION['user'])) {
       $user=$_SESSION['user'];
-      // var_dump($user);
-      // $this->render('index');
+
     }
     else {
       $this->render('login');
